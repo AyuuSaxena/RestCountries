@@ -41,7 +41,6 @@ export default function Cards({Query}){
     countriesData()
   }, [])
 
-  console.log(Data)
 
   let filterData = Data.filter(item => item.name.common.toLowerCase().includes(country) || item.region.toLowerCase().includes(country));
 
