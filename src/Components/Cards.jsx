@@ -56,7 +56,7 @@ export default function Cards({Query}){
     })
   })
   
-  console.log(container)
+
   
   return container === undefined ? (<Loading />) : (
     <div className='container'>{container}</div>
