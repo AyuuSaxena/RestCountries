@@ -1,0 +1,11 @@
+#img {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#img img{
+  width: 600px;
+  height: 500px;
+  background-size: cover;
+}
