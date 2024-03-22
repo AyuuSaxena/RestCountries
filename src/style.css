@@ -10,7 +10,6 @@
 
 .container {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
   /* justify-content: space-evenly; */
 }
@@ -82,6 +81,7 @@ span {
   margin: 0 20px;
 }
 .back {
+  align-self: start;
   margin-top: 20px;
 }
 .back:hover {
@@ -128,7 +128,9 @@ span {
 }
 
 @media (min-width: 375px) and (max-width: 500px) {
-  
+  .container{
+    justify-content: center;
+  }
   .cardContainer {
     flex-direction: column;
   }
