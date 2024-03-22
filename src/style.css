@@ -10,6 +10,7 @@
 
 .container {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   /* justify-content: space-evenly; */
 }
@@ -48,8 +49,8 @@
   position: relative;
 }
 
-.search form input{
-  padding-left: 30px ;
+.search form input {
+  padding-left: 30px;
 }
 .search form i {
   position: absolute;
@@ -124,4 +125,21 @@ span {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+}
+
+@media (min-width: 375px) and (max-width: 500px) {
+  
+  .cardContainer {
+    flex-direction: column;
+  }
+  .flag img {
+    width: 18rem;
+    height: 10rem;
+  }
+  .content {
+    width: 90%;
+  }
+  .details {
+    height: 400px;
+  }
 }
