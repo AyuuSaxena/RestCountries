@@ -1,4 +1,5 @@
-import 'ldrs/ring'
+import { ring } from 'ldrs'
+ring.register('l-ring');
 
 export default function Loading() {
   return (
