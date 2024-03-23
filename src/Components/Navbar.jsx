@@ -23,25 +23,25 @@ export default function Navbar() {
         
     }
    
-    useEffect(() => {
-        // Select all <a> elements inside the offcanvas
-        let links = document.querySelectorAll('.nav-item a');
+    // useEffect(() => {
+    //     // Select all <a> elements inside the offcanvas
+    //     let links = document.querySelectorAll('.nav-item a');
         
-        console.log(links)
+    //     console.log(links)
 
-        // Function to close the offcanvas menu
-        function closeOffcanvas() {
-            let offcanvas = document.querySelector('.offcanvas');
-            let backdrop = document.querySelector('.offcanvas-backdrop');
-            offcanvas.classList.remove('show');
-            backdrop.classList.remove('show');
-        }
+    //     // Function to close the offcanvas menu
+    //     function closeOffcanvas() {
+    //         let offcanvas = document.querySelector('.offcanvas');
+    //         let backdrop = document.querySelector('.offcanvas-backdrop');
+    //         offcanvas.classList.remove('show');
+    //         backdrop.classList.remove('show');
+    //     }
 
-        // Add a click event listener to each <a> element
-        links.forEach(function (link) {
-            link.addEventListener('click', closeOffcanvas);
-        });
-    }, [])
+    //     // Add a click event listener to each <a> element
+    //     links.forEach(function (link) {
+    //         link.addEventListener('click', closeOffcanvas);
+    //     });
+    // }, [])
 
     
 
