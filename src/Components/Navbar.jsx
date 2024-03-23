@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
 import { Link } from 'react-router-dom';
 
 export default function Navbar() {
@@ -22,6 +22,29 @@ export default function Navbar() {
         }
         
     }
+   
+    useEffect(() => {
+        // Select all <a> elements inside the offcanvas
+        let links = document.querySelectorAll('.nav-item a');
+        
+        console.log(links)
+
+        // Function to close the offcanvas menu
+        function closeOffcanvas() {
+            let offcanvas = document.querySelector('.offcanvas');
+            let backdrop = document.querySelector('.offcanvas-backdrop');
+            offcanvas.classList.remove('show');
+            backdrop.classList.remove('show');
+        }
+
+        // Add a click event listener to each <a> element
+        links.forEach(function (link) {
+            link.addEventListener('click', closeOffcanvas);
+        });
+    }, [])
+
+    
+
     return (
 
 
@@ -32,10 +55,10 @@ export default function Navbar() {
                     <button type="button" className="btn" onClick={Mode}> <img src={Imgsrc} alt=""  />{ModeName}</button>
 
 
-                    <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                    <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation" >
                         <span className="navbar-toggler-icon"></span>
                     </button>
-                    <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                    <div className= "offcanvas offcanvas-end" tabIndex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
                         <div className="offcanvas-header">
                             <h5 className="offcanvas-title" id="offcanvasNavbarLabel">Continents</h5>
                             <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
