@@ -28,7 +28,7 @@ export default function Navbar() {
         <header>
             <nav className="navbar  bg-body-tertiary  px-3">
                 <div className="container-fluid">
-                    <h1 className="navbar-brand">Where in the world?</h1>
+                    <Link className="navbar-brand"  to="/">Where in the world?</Link>
                     <button type="button" className="btn" onClick={Mode}> <img src={Imgsrc} alt=""  />{ModeName}</button>
 
 
