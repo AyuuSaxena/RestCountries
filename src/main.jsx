@@ -10,7 +10,6 @@ import Error from "./Components/Error.jsx";
 
 import './style.css'
 
-
 const router = createBrowserRouter([
   {
     path: "/",
@@ -24,9 +23,35 @@ const router = createBrowserRouter([
       },
       {
         path: "country",
-        element: <>
-          <Card />
-        </>
+        element: <Card />
+      },
+      {
+        path: "Africa",
+        element: <Home sort={"Africa"}/>
+      },
+      {
+        path: "Antarctica",
+        element: <Home sort={"Antarctica"}/>
+      },
+      {
+        path: "Asia",
+        element: <Home sort={"Asia"}/>
+      },
+      {
+        path: "Europe",
+        element: <Home sort={"Europe"}/>
+      },
+      {
+        path: "Oceania",
+        element: <Home sort={"Oceania"}/>
+      },
+      {
+        path: "Americas",
+        element: <Home sort={"Americas"}/>
+      },
+      {
+        path: "SouthAmerica",
+        element: <Home sort={"South America"}/>
       },
 
     ]

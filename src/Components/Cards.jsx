@@ -42,7 +42,7 @@ export default function Cards({Query}){
   }, [])
 
 
-  let filterData = Data.filter(item => item.name.common.toLowerCase().includes(country) || item.region.toLowerCase().includes(country));
+  let filterData = Data.filter(item => item.name.common.toLowerCase().includes(country) || item.region.toLowerCase().includes(country) ) ;
 
   let container = filterData.map((value, index) => {
 

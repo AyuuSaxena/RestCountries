@@ -26,9 +26,14 @@ export default function Search({ setQuery }) {
                     Filter
                 </button>
                 <ul className="dropdown-menu">
-                    <li><button className="dropdown-item" >Action</button></li>
-                    <li><button className="dropdown-item" >Another action</button></li>
-                    <li><button className="dropdown-item" >Something else here</button></li>
+
+                    <li><button className="dropdown-item" >Africa</button></li>
+                    <li><button className="dropdown-item" >Antarctica</button></li>
+                    <li><button className="dropdown-item" >Asia</button></li>
+                    <li><button className="dropdown-item" >Europe</button></li>
+                    <li><button className="dropdown-item" >Oceania</button></li>
+                    <li><button className="dropdown-item" >North America</button></li>
+                    <li><button className="dropdown-item" >South America</button></li>
                 </ul>
             </div>
         </div>

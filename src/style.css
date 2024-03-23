@@ -26,16 +26,23 @@
   text-decoration: none;
 }
 
+.navbar-brand{
+  flex-grow: 1;
+}
+
 .btn {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  
 }
 
 .btn img {
   width: 20px;
   margin: 4px;
 }
+
+
 
 .search {
   margin: 30px 0;
