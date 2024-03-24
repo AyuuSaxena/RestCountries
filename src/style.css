@@ -8,6 +8,12 @@
   align-items: center;
 }
 
+.navbar-toggler{
+    padding: 7px 0;
+  }
+  .navbar-toggler-icon{
+    margin: 0 10px;
+  }
 
 
 .container {
