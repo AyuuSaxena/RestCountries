@@ -10,7 +10,7 @@ let Card = ( {ImgSrc, CountryName, Population, Region, Capital, key} ) => {
   
 
   return (
-    <Link className="card border " key={key} to={`/country?name=${CountryName}`}>
+    <Link className="card border " key={key} to={`/country/${CountryName}`}>
       <img src={ImgSrc} alt="" />
       <h2>{CountryName}</h2>
       <span><b>Population : </b>{Population}</span>

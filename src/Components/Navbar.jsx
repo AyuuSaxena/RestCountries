@@ -23,27 +23,7 @@ export default function Navbar() {
         
     }
    
-    // useEffect(() => {
-    //     // Select all <a> elements inside the offcanvas
-    //     let links = document.querySelectorAll('.nav-item a');
-        
-    //     console.log(links)
 
-    //     // Function to close the offcanvas menu
-    //     function closeOffcanvas() {
-    //         let offcanvas = document.querySelector('.offcanvas');
-    //         let backdrop = document.querySelector('.offcanvas-backdrop');
-    //         offcanvas.classList.remove('show');
-    //         backdrop.classList.remove('show');
-    //     }
-
-    //     // Add a click event listener to each <a> element
-    //     links.forEach(function (link) {
-    //         link.addEventListener('click', closeOffcanvas);
-    //     });
-    // }, [])
-
-    
 
     return (
 
@@ -61,31 +41,31 @@ export default function Navbar() {
                     <div className= "offcanvas offcanvas-end" tabIndex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
                         <div className="offcanvas-header">
                             <h5 className="offcanvas-title" id="offcanvasNavbarLabel">Continents</h5>
-                            <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                            <button type="button" className="btn-close" data-bs-toggle="offcanvas" aria-label="Close"></button>
                         </div>
                         <div className="offcanvas-body">
                             <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
 
-                                <li className="nav-item">
-                                    <Link className="nav-link active" aria-current="page" to="/">ALL</Link>
+                                <li className="nav-item" data-bs-toggle="offcanvas">
+                                    <Link className="nav-link active" aria-current="page" to="/"  >ALL</Link>
                                 </li>
-                                <li className="nav-item">
-                                    <Link className="nav-link " aria-current="page" to="/Africa">Africa</Link>
+                                <li className="nav-item" data-bs-toggle="offcanvas" >
+                                    <Link className="nav-link " aria-current="page" to="/Africa"   >Africa</Link>
                                 </li>
-                                <li className="nav-item">
-                                    <Link className="nav-link" to="/Americas">Americas</Link>
+                                <li className="nav-item" data-bs-toggle="offcanvas">
+                                    <Link className="nav-link" to="/Americas"   >Americas</Link>
                                 </li>
-                                <li className="nav-item">
-                                    <Link className="nav-link" to="/Antarctica">Antarctica</Link>
+                                <li className="nav-item" data-bs-toggle="offcanvas">
+                                    <Link className="nav-link" to="/Antarctica"   >Antarctica</Link>
                                 </li>
-                                <li className="nav-item">
-                                    <Link className="nav-link" to="/Asia">Asia</Link>
+                                <li className="nav-item" data-bs-toggle="offcanvas">
+                                    <Link className="nav-link" to="/Asia"   >Asia</Link>
                                 </li>
-                                <li className="nav-item">
-                                    <Link className="nav-link" to="/Europe">Europe</Link>
+                                <li className="nav-item" data-bs-toggle="offcanvas">
+                                    <Link className="nav-link" to="/Europe"   >Europe</Link>
                                 </li>
-                                <li className="nav-item">
-                                    <Link className="nav-link" to="/Oceania">Oceania</Link>
+                                <li className="nav-item" data-bs-toggle="offcanvas">
+                                    <Link className="nav-link" to="/Oceania"   >Oceania</Link>
                                 </li>
                                 
                                 {/* <li className="nav-item">

@@ -1,45 +1,52 @@
 import { useEffect, useState } from "react"
 import Loading from "./Loading.jsx";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import CountryNotfound from "./CountryNotfound.jsx";
 
 
 
 export default function Card() {
 
-    let countryNam = new URLSearchParams(location.search).get("name"); // to get query params value from url
-
+    let params = useParams(); // to get query params value from url
+    let countryName = params.country;
+    console.log(countryName)
     const [countryData, setcountryData] = useState(null);
+    const [notFound, setnotFound] = useState(false)
 
     useEffect(() => {
 
         let countryDataFetch = async () => {
-            let data = await fetch(`https://restcountries.com/v3.1/name/${countryNam}?fullText=true`)
-            let json = await data.json();
-            let [object] = json; //destructuring of array
+            try {
+                let data = await fetch(`https://restcountries.com/v3.1/name/${countryName}?fullText=true`)
+                let json = await data.json();
+                let [object] = json; //destructuring of array
 
-            let currencySymbol = "";
+                let currencySymbol = "";
 
-            if (Object.values(object.currencies)[0].symbol === undefined) {
-                currencySymbol = "";
-            } else {
-                currencySymbol = ` (${Object.values(object.currencies)[0].symbol})`;
+                if (Object.values(object.currencies)[0].symbol === undefined) {
+                    currencySymbol = "";
+                } else {
+                    currencySymbol = ` (${Object.values(object.currencies)[0].symbol})`;
+                }
+
+                let filteredData = {
+                    png: object.flags.png,
+                    countryName: object.name.common,
+                    nativeName: object.name.official,
+                    population: object.population,
+                    region: object.region,
+                    subRegion: object.subregion,
+                    capital: object.capital,
+                    borderCountries: object.borders?.join() === undefined ? "None" : object.borders?.join(" , "),
+                    tld: object.tld?.join(" , "),
+                    currency: Object.values(object.currencies)[0].name.concat(currencySymbol), // object.value converts object to array otherwise we can't access its properties because its key changes with country change/data 
+                    language: Object.values(object.languages)?.join(" , ")
+                };
+
+                setcountryData(filteredData)
+            } catch (error) {
+                setnotFound(true)
             }
-
-            let filteredData = {
-                png: object.flags.png,
-                countryName: object.name.common,
-                nativeName: object.name.official,
-                population: object.population,
-                region: object.region,
-                subRegion: object.subregion,
-                capital: object.capital,
-                borderCountries: object.borders?.join() === undefined ? "None" : object.borders?.join(" , "),
-                tld: object.tld?.join(" , "),
-                currency: Object.values(object.currencies)[0].name.concat(currencySymbol), // object.value converts object to array otherwise we can't access its properties because its key changes with country change/data 
-                language: Object.values(object.languages)?.join(" , ")
-            };
-
-            setcountryData(filteredData)
         }
         countryDataFetch();
     }, [])
@@ -47,10 +54,10 @@ export default function Card() {
     // console.log(countryData)
 
 
-    return countryData === null ? (<Loading />) : ( // ternary operator for loading because it takes time to get the country data
+    return notFound ? <CountryNotfound/> : countryData === null ? (<Loading />) : ( // ternary operator for loading because it takes time to get the country data
 
         <div className="container">
-            <Link className="btn back" to="/"><i className="fa-solid fa-arrow-left"></i> Back</Link>
+            <button className="btn back" onClick={()=> history.back()}><i className="fa-solid fa-arrow-left"></i> Back</button>
             <div className="cardContainer">
                 <div className="flag">
                     <img src={countryData.png} alt="" />

@@ -22,37 +22,14 @@ const router = createBrowserRouter([
         element: <Home />
       },
       {
-        path: "country",
+        path: "country/:country",
         element: <Card />
       },
       {
-        path: "Africa",
-        element: <Home sort={"Africa"}/>
+        path: ":continent",
+        element: <Home /> 
       },
-      {
-        path: "Antarctica",
-        element: <Home sort={"Antarctica"}/>
-      },
-      {
-        path: "Asia",
-        element: <Home sort={"Asia"}/>
-      },
-      {
-        path: "Europe",
-        element: <Home sort={"Europe"}/>
-      },
-      {
-        path: "Oceania",
-        element: <Home sort={"Oceania"}/>
-      },
-      {
-        path: "Americas",
-        element: <Home sort={"Americas"}/>
-      },
-      {
-        path: "SouthAmerica",
-        element: <Home sort={"South America"}/>
-      },
+      
 
     ]
   }
