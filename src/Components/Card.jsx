@@ -9,7 +9,6 @@ export default function Card() {
 
     let params = useParams(); // to get query params value from url
     let countryName = params.country;
-    console.log(countryName)
     const [countryData, setcountryData] = useState(null);
     const [notFound, setnotFound] = useState(false)
 

@@ -3,17 +3,10 @@ import PropTypes from 'prop-types'
 
 export default function Search({ setQuery }) {
 
-    const value =(e)=>{
-        e.preventDefault();
-        let yoo =document.getElementsByTagName("input")[0].value;
-        console.log(yoo)
-    }
-
-    
-    
+  
     return (
         <div className="search">
-            <form className="d-flex flex" role="search" onSubmit={value}>
+            <form className="d-flex flex" role="search" >
                 <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" onChange={(e)=>{
                     setQuery(e.target.value);
                 }}/>
