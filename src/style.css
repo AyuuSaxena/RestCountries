@@ -143,8 +143,9 @@ span {
   flex-wrap: wrap;
 }
 
-@media (min-width: 375px) and (max-width: 500px) {
+@media (min-width: 275px) and (max-width: 500px) {
   
+  /* navbar starts here */
   .container-fluid a,button{
     font-size: smaller !important;
   }
@@ -161,12 +162,20 @@ span {
   .offcanvas{
     max-width: 200px;
   }
+
+  /* navbar end here */
+
+  /* .back{
+    justify-content: flex-start;
+  } */
   
   .container{
+    flex-direction: column;
     justify-content: center;
   }
   .cardContainer {
     flex-direction: column;
+    height: 100%;
   }
   .flag img {
     width: 20rem;
@@ -176,6 +185,7 @@ span {
     width: 90%;
   }
   .details {
-    height: 400px;
+    height: 420px;
   }
+  
 }
