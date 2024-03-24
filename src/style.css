@@ -8,6 +8,8 @@
   align-items: center;
 }
 
+
+
 .container {
   display: flex;
   flex-wrap: wrap;
@@ -28,6 +30,7 @@
 
 .navbar-brand{
   flex-grow: 1;
+  font-weight: bold;
 }
 
 .btn {
@@ -135,6 +138,24 @@ span {
 }
 
 @media (min-width: 375px) and (max-width: 500px) {
+  
+  .container-fluid a,button{
+    font-size: smaller !important;
+  }
+  .navbar-brand{
+    flex-grow: 0;
+  }
+  .navbar-toggler{
+    padding: 7px 0;
+  }
+  .navbar-toggler-icon{
+    margin: 0 10px;
+  }
+
+  .offcanvas{
+    max-width: 200px;
+  }
+  
   .container{
     justify-content: center;
   }
