@@ -203,3 +203,9 @@ span {
     flex-wrap: wrap;
   }
 }
+
+@media screen and (min-width: 500px) {
+  .container{
+    justify-content: space-evenly;
+  }
+}

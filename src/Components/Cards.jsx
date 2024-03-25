@@ -5,12 +5,11 @@ import { useEffect, useState } from 'react';
 
 
 // eslint-disable-next-line react/prop-types
-let Card = ( {ImgSrc, CountryName, Population, Region, Capital, key} ) => {
+let Card = ( {ImgSrc, CountryName, Population, Region, Capital, key, data} ) => {
 
-  
 
   return (
-    <Link className="card border " key={key} to={`/country/${CountryName}`}>
+    <Link className="card border " key={key} to={`/country/${CountryName}`} state={data}>
       <img src={ImgSrc} alt="" />
       <h2>{CountryName}</h2>
       <span><b>Population : </b>{Population}</span>
@@ -53,6 +52,7 @@ export default function Cards({Query}){
       Population: value.population,
       Region: value.region,
       Capital: value.capital,
+      data: value
     })
   })
   
