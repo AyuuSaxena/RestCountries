@@ -20,13 +20,8 @@ export default function Search({ setQuery }) {
                 </button>
                 <ul className="dropdown-menu">
 
-                    <li><button className="dropdown-item" >Africa</button></li>
-                    <li><button className="dropdown-item" >Antarctica</button></li>
-                    <li><button className="dropdown-item" >Asia</button></li>
-                    <li><button className="dropdown-item" >Europe</button></li>
-                    <li><button className="dropdown-item" >Oceania</button></li>
-                    <li><button className="dropdown-item" >North America</button></li>
-                    <li><button className="dropdown-item" >South America</button></li>
+                    <li><button className="dropdown-item" >A to Z</button></li>
+                    <li><button className="dropdown-item" >Population</button></li>
                 </ul>
             </div>
         </div>
