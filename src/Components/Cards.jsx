@@ -57,6 +57,9 @@ export default function Cards({Query}){
   })
   
 
+  let yoo = container;
+  yoo.sort((a, b) => a.props.state.name.common.localeCompare(b.props.state.name.common))
+  
   
   return container === undefined ? (<Loading />) : (
     <div className='container'>{container}</div>
