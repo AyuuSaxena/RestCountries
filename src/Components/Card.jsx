@@ -13,7 +13,7 @@ export default function Card() {
     
     let location = useLocation(); // to get data value from link using state attribute we can pass data there 
     let StoredData = location.state 
-
+    
     const [countryData, setcountryData] = useState(null);
     const [notFound, setnotFound] = useState(false)
 

@@ -1,26 +1,26 @@
-import { useState} from 'react'
+import { useEffect, useState} from 'react'
 import { Link } from 'react-router-dom';
 
 export default function Navbar() {
 
-    const [Imgsrc, setImgsrc] = useState("https://cdn-icons-png.flaticon.com/512/1164/1164903.png")
-    const [ModeName, setModeName] = useState("Light Mode");
-    
-    const Mode = () => {
-        let body = document.getElementsByTagName('body')[0];
+    const [isDark, setisDark] = useState(JSON.parse(localStorage.getItem('isDark')));
 
-        if (!body.hasAttribute('data-bs-theme')){
-            body.setAttribute('data-bs-theme', 'dark');
-            setImgsrc("https://cdn-icons-png.flaticon.com/512/275/275915.png");
-            setModeName("Dark Mode");
-            
-        }else{
+    useEffect(() => {
+        let body = document.body;
+        if (!isDark) {
             body.removeAttribute('data-bs-theme');
-            setImgsrc("https://cdn-icons-png.flaticon.com/512/1164/1164903.png")
-            setModeName("Light Mode");
-            
+            localStorage.setItem("isDark", false)
+        } else {
+            body.setAttribute('data-bs-theme', 'dark');
+            localStorage.setItem("isDark", true)
+
         }
-        
+    },[isDark])
+
+
+    const Mode = () => {
+        console.log(isDark)
+        setisDark(!isDark)
     }
    
 
@@ -32,7 +32,7 @@ export default function Navbar() {
             <nav className="navbar  bg-body-tertiary  px-3">
                 <div className="container-fluid">
                     <Link className="navbar-brand"  to="/">Where in the world?</Link>
-                    <button type="button" className="btn" onClick={Mode}> <img src={Imgsrc} alt=""  />{ModeName}</button>
+                    <button type="button" className="btn" onClick={Mode}> <img src={isDark ? "https://cdn-icons-png.flaticon.com/512/275/275915.png" : "https://cdn-icons-png.flaticon.com/512/1164/1164903.png"} alt="" />{isDark ? "Dark Mode" : "Light Mode"}</button>
 
 
                     <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation" >
