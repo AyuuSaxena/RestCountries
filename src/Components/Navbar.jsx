@@ -35,30 +35,30 @@ export default function Navbar() {
                     <div className= "offcanvas offcanvas-end" tabIndex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
                         <div className="offcanvas-header">
                             <h5 className="offcanvas-title" id="offcanvasNavbarLabel">Continents</h5>
-                            <button type="button" className="btn-close" data-bs-toggle="offcanvas" aria-label="Close"></button>
+                            <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                         </div>
                         <div className="offcanvas-body">
                             <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
 
-                                <li className="nav-item" data-bs-toggle="offcanvas">
+                                <li className="nav-item" data-bs-dismiss="offcanvas">
                                     <Link className="nav-link active" aria-current="page" to="/"  >ALL</Link>
                                 </li>
-                                <li className="nav-item" data-bs-toggle="offcanvas" >
+                                <li className="nav-item" data-bs-dismiss="offcanvas" >
                                     <Link className="nav-link " aria-current="page" to="/Africa"   >Africa</Link>
                                 </li>
-                                <li className="nav-item" data-bs-toggle="offcanvas">
+                                <li className="nav-item" data-bs-dismiss="offcanvas">
                                     <Link className="nav-link" to="/Americas"   >Americas</Link>
                                 </li>
-                                <li className="nav-item" data-bs-toggle="offcanvas">
+                                <li className="nav-item" data-bs-dismiss="offcanvas">
                                     <Link className="nav-link" to="/Antarctica"   >Antarctica</Link>
                                 </li>
-                                <li className="nav-item" data-bs-toggle="offcanvas">
+                                <li className="nav-item" data-bs-dismiss="offcanvas">
                                     <Link className="nav-link" to="/Asia"   >Asia</Link>
                                 </li>
-                                <li className="nav-item" data-bs-toggle="offcanvas">
+                                <li className="nav-item" data-bs-dismiss="offcanvas">
                                     <Link className="nav-link" to="/Europe"   >Europe</Link>
                                 </li>
-                                <li className="nav-item" data-bs-toggle="offcanvas">
+                                <li className="nav-item" data-bs-dismiss="offcanvas">
                                     <Link className="nav-link" to="/Oceania"   >Oceania</Link>
                                 </li>
                                 
