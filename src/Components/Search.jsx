@@ -24,7 +24,7 @@ export default function Search({ setQuery, setSorting }) {
                 <ul className="dropdown-menu">
 
                     <li><button className="dropdown-item" onClick={() => setSort(!Sort)} >{Sort ? "A to Z \u2193" : "A to Z  \u2191"}</button></li>
-                    <li><button className="dropdown-item" >Population</button></li>
+                    {/* <li><button className="dropdown-item" >Population</button></li> */}
                 </ul>
             </div>
         </div>
