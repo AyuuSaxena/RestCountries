@@ -19,11 +19,11 @@ export default function Card() {
 
     const updateCountrydata = (object) => {
         let currencySymbol = "";
-
-        if (Object.values(object.currencies)[0].symbol === undefined) {
+        console.log(Object.values(object.currencies || {}))
+        if (Object.values(object.currencies || {})[0]?.symbol === undefined) {
             currencySymbol = "";
         } else {
-            currencySymbol = ` (${Object.values(object.currencies)[0].symbol})`;
+            currencySymbol = ` (${Object.values(object.currencies)[0]?.symbol})`;
         }
 
         let filteredData = {
@@ -36,8 +36,8 @@ export default function Card() {
             capital: object.capital,
             borderCountries: [], //?.join(" , ")
             tld: object.tld?.join(" , "),
-            currency: Object.values(object.currencies)[0].name.concat(currencySymbol), // object.value converts object to array otherwise we can't access its properties because its key changes with country change/data 
-            language: Object.values(object.languages)?.join(" , ")
+            currency:  Object.values(object.currencies || {})[0]?.name.concat(currencySymbol), // object.value converts object to array otherwise we can't access its properties because its key changes with country change/data 
+            language: Object.values(object.languages || {})?.join(" , ")
         };
 
         setcountryData(filteredData);
@@ -68,7 +68,7 @@ export default function Card() {
                 }
 
             } catch (error) {
-                // console.error(error)
+                console.error(error)
                 setnotFound(true)
             }
         }
@@ -100,7 +100,7 @@ export default function Card() {
                             <b>Sub region :</b> {countryData.subRegion} 
                         </p>
                         <p>
-                            <b>Capital :</b> {countryData.capital} 
+                            <b>Capital :</b> {countryData?.capital} 
                         </p>
                         
                         <p>
