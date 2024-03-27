@@ -5,7 +5,6 @@ export default function Search({ setQuery, setSorting }) {
 
 
     let [Sort, setSort] =setSorting;
-    console.log(Sort)
   
     return (
         <div className="search">
@@ -34,5 +33,5 @@ export default function Search({ setQuery, setSorting }) {
 
 Search.propTypes ={
     setQuery : PropTypes.func,
-    Sorting : PropTypes.array
+    setSorting : PropTypes.array
 }
