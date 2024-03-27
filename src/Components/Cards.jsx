@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import Loading from './Loading';
 import { Link } from 'react-router-dom'
-import { useEffect, useState } from 'react';
+import { useFilter } from '../hooks/useFilter';
 
 
 // eslint-disable-next-line react/prop-types
@@ -25,23 +25,11 @@ let Card = ( {ImgSrc, CountryName, Population, Region, Capital, key, data} ) => 
 // console.log(Data)
 
 
-export default function Cards({Query}){
+export default function Cards({Query ,Sorting}){
 
   let country = Query.toLowerCase();
-  const [Data, setData] = useState([]);
 
-  useEffect(() => {
-    let countriesData = async () => {
-
-      let data = await fetch("https://restcountries.com/v3.1/all");
-      let json = await data.json();
-      setData(json);
-    }
-    countriesData()
-  }, [])
-
-
-  let filterData = Data.filter(item => item.name.common.toLowerCase().includes(country) || item.region.toLowerCase().includes(country) ) ;
+  let filterData = useFilter(country);
 
   let container = filterData.map((value, index) => {
 
@@ -57,16 +45,20 @@ export default function Cards({Query}){
   })
   
 
-  let yoo = container;
-  yoo.sort((a, b) => a.props.state.name.common.localeCompare(b.props.state.name.common))
+  if (Sorting) {
+    container.sort((a, b) => a.props.state.name.common.localeCompare(b.props.state.name.common)).reverse()
+  } else if(!Sorting) (
+    container.sort((a, b) => a.props.state.name.common.localeCompare(b.props.state.name.common))
+  )
   
   
   return container === undefined ? (<Loading />) : (
-    <div className='container'>{container}</div>
+    <div className='container' > {container}</div>
   )
 }
 
 
 Cards.propTypes={
-  Query : PropTypes.string
+  Query : PropTypes.string,
+  Sorting : PropTypes.bool
 }

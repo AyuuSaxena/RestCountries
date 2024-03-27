@@ -1,8 +1,11 @@
 import PropTypes from 'prop-types'
 
 
-export default function Search({ setQuery }) {
+export default function Search({ setQuery, setSorting }) {
 
+
+    let [Sort, setSort] =setSorting;
+    console.log(Sort)
   
     return (
         <div className="search">
@@ -20,7 +23,7 @@ export default function Search({ setQuery }) {
                 </button>
                 <ul className="dropdown-menu">
 
-                    <li><button className="dropdown-item" >A to Z</button></li>
+                    <li><button className="dropdown-item" onClick={() => setSort(!Sort)} >{Sort ? "A to Z \u2193" : "A to Z  \u2191"}</button></li>
                     <li><button className="dropdown-item" >Population</button></li>
                 </ul>
             </div>
@@ -30,5 +33,6 @@ export default function Search({ setQuery }) {
 
 
 Search.propTypes ={
-    setQuery : PropTypes.func
+    setQuery : PropTypes.func,
+    Sorting : PropTypes.array
 }
